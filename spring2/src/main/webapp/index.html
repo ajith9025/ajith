@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="exam.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<title>Online Examination Skill Evaluator</title>
+
+<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 800px;
+	margin: 20px auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.cart-list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.cart-item {
+	background-color: #f9f9f9;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item h2 {
+	margin-top: 0;
+}
+
+.cart-item p {
+	display: inline-block;
+	padding: auto;
+	background-color: #007bff;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.cart-item a {
+	display: inline-block;
+	padding: 5px 10px;
+	background-color: #007bff;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.cart-item a:hover {
+	background-color: #0056b3;
+}
+
+#trusted-by {
+	padding: 50px 0;
+	background-color: #f8f9fa;
+	text-align: center;
+}
+
+.trusted-logos {
+	margin-top: 20px;
+}
+
+.trusted-logos img {
+	max-height: 200px;
+	margin: 0 15px;
+	opacity: 0.7;
+	/* Adjust opacity as needed */
+}
+
+.trusted-logos img:hover {
+	opacity: 1;
+	/* Full opacity on hover */
+}
+
+input[type=text], input[type=email], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+input[type=submit] {
+	background-color: red;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	cursor: pointer;
+}
+
+input[type=submit]:hover {
+	background-color: black;
+}
+
+.container {
+	border-radius: 5px;
+	background-color: #f2f2f2;
+	padding: 10px;
+}
+
+.column {
+	float: left;
+	width: 50%;
+	margin-top: 6px;
+	padding: 20px;
+}
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.column, input[type=submit] {
+	width: 50%;
+	margin-top: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+	background-color: black;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+}
+
+.navbar {
+	list-style-type: none;
+	display: flex;
+	justify-content: end;
+	margin-left: auto;
+}
+
+.navbar li {
+	float: left;
+}
+
+.navbar a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 20px;
+	text-decoration: none;
+}
+
+.navbar a:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.navbar a.active {
+	background-color: aqua;
+	color: white;
+}
+
+.logo-title {
+	display: flex;
+	align-items: center;
+}
+
+.logo-title img {
+	height: 30px;
+	margin-right: 15px;
+}
+
+main {
+	padding: 130px;
+}
+
+footer {
+	background-color: #333;
+	color: black;
+	text-align: center;
+	padding: 1em 0;
+}
+
+footer .container {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 0 1em;
+}
+
+.nav_menu-3 {
+	margin-bottom: 20px;
+}
+
+.widget_nav_menu h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.widget-menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.widget-menu li {
+	margin-bottom: 5px;
+}
+
+.widget-menu li a {
+	text-decoration: none;
+	color: #f0f0f0;
+	display: white;
+	padding: 5px 10px;
+	transition: background-color 0.3s ease;
+}
+
+.widget-menu li a:hover {
+	background-color: orange;
+}
+</style>
+<script>
+	function handleSubmit(event) {
+		event.preventDefault();
+		alert("Thank you for submitting the message");
+		event.target.submit();
+	}
+</script>
+</head>
+<body>
+
+	<nav>
+		<div class="logo-title">
+			<img src="online-course_11131091.png" alt="Logo">
+			<span style="color: white; font-size: 20px;"> SkillCheck Evaluator</span>
+		</div>
+		<ul class="navbar">
+			<li><a class="active" href="#">Home</a></li>
+			<li><a href="examPage.jsp">Start Exam</a></li>
+			<li><a href="contact.jsp">Contact Us</a></li>
+			<li><a href="index.jsp">Logout</a></li>
+		</ul>
+	</nav>
+	<br>
+
+	<div class="header">
+		<div style="text-align: center">
+			<h1>Our Online Examination Partner</h1>
+			<p>
+				Online exam system for all your testing needs for <b>assessment, recruitment, and selection</b>
+			</p>
+		</div>
+	</div>
+	<br>
+	<br>
+
+	<div class="container">
+		<h1>Select Your Skills</h1>
+		<div class="cart-list">
+			<div class="cart-item">
+				<h2>Java</h2>
+				<p>
+					<a href="JavaDetails.jsp">Java Technology</a>
+				</p>
+				<a href="test">Take Test</a>
+			</div>
+			<div class="cart-item">
+				<h2>HTML</h2>
+				<p>
+					<a href="JavaDetails.jsp">HTML Technology</a>
+				</p>
+				<a href="test">Take Test</a>
+			</div>
+			<div class="cart-item">
+				<h2>CSS</h2>
+				<p>
+					<a href="JavaDetails.jsp">CSS Technology</a>
+				</p>
+				<a href="test">Take Test</a>
+			</div>
+			<div class="cart-item">
+				<h2>Python</h2>
+				<p>
+					<a href="JavaDetails.jsp">Python Technology</a>
+				</p>
+				<a href="test">Take Test</a>
+			</div>
+		</div>
+	</div>
+
+	<section id="trusted-by">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h2>Our Client Partner</h2>
+					<div class="trusted-logos">
+						<img src="amazon.png" alt="Company 1"> <img src="TCS.png" alt="Company 2"> <img src="google.png" alt="Company 3">
+						<img src="zoho.png" alt="Company 4"> <img src="hcl1.png" alt="Company 5">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="row">
+		<div style="text-align: center">
+			<h2>Contact Us</h2>
+		</div>
+
+		<div class="row">
+			<div class="column">
+				<img src="pexels-zen-chung-5537527.jpg" style="width: 100%" alt="">
+			</div>
+			<div class="column">
+				<form onsubmit="handleSubmit(event)">
+					<label for="firstname">First Name</label> <input type="text" id="firstname" name="firstname" placeholder="Enter Your Firstname" required>
+					<label for="lastname">Last Name</label> <input type="text" id="lastname" name="lastname" placeholder="Enter Your Lastname" required>
+					<label for="email">Email</label> <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
+					<label for="Exam Name">Exam Name</label> <select id="Exam" name="Exam">
+						<option>Java</option>
+						<option>HTML</option>
+						<option>CSS</option>
+						<option>Python</option>
+					</select>
+					<label for="subject">Subject</label>
+					<textarea id="subject" name="subject" placeholder="Enter your Message" style="height: 170px"></textarea>
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<section id="nav_menu-3" class="widget hide_widget_title widget_nav_menu">
+			<h2>Company</h2>
+			<div class="menu-footermenu1-container">
+				<ul id="menu-footermenu1" class="widget-menu">
+					<li id="menu-item-18823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18823"><a href="about.jsp">About Us</a></li>
+					<li><a href="contact.jsp">Contact Us</a></li>
+					<li><a href="testimonials.jsp">Testimonials</a></li>
+					<li><a href="leader.jsp">Leadership</a></li>
+					<li><a href="#">Partners</a></li>
+					<li><a href="#">Privacy and Data Security</a></li>
+				</ul>
+			</div>
+		</section>
+		<div class="container">
+			<p>&copy; 2024 Online Examination Skill Evaluator. All rights reserved.</p>
+		</div>
+	</footer>
+</body>
+</html>
